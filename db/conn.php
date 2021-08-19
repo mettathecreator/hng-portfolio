@@ -1,6 +1,6 @@
 <?php 
 
-$state = 'local';
+$state = 'production';
 
 if ($state === 'production') {
     $connectionStringHerokuEnv = 'mysql://ba8a0ffe44363d:330cb2d3@us-cdbr-east-04.cleardb.com/heroku_e00f674c3f63fbb?reconnect=true';
