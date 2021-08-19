@@ -1,31 +1,6 @@
 <?php
 
 
-// if(isset($_POST['sec'])){
-              
-//     $name = $_POST['name'];
-//     $email = $_POST['email'];
-//     $subject = $_POST['subject'];
-//     $message = $_POST['message'];
-
-//     $name = htmlspecialchars($name, ENT_QUOTES);
-//     $email = htmlspecialchars($email, ENT_QUOTES);
-//     $subject = htmlspecialchars($subject, ENT_QUOTES);
-//     $message = htmlspecialchars($message, ENT_QUOTES);
-    
-//     $query = "INSERT INTO `responses` (``,`name`, `email`, `subject`, `message`) 
-//       VALUES (\"$name\", \"$email\", \"$subject\", \"$message\", \"$date\")";
-    
-//       if(mysqli_query($connection,$query)){
-        
-//          echo '<script> alert("alright") </script>';
-//       }else{
-//         mysqli_error($connection);
-//       }
-      
-// }else{
-//   // header("location: " . REMOTE_PATH ."index.php");
-// }
 
 
 if(isset($_POST["name"]))

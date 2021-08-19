@@ -15,8 +15,8 @@ if ($state === 'production') {
     $password = $url["pass"];
     $db = substr($url["path"], 1);
 
-    $connection = new mysqli($server, $username, $password, $db);
-    // $connection = new PDO("mysql:host=$server;dbname=hng-resume", "root", "");
+    // $connection = new mysqli($server, $username, $password, $db);
+    $connection = new PDO("mysql:host=$server;dbname=$db", "$username", "$password");
 	
 }else{
 
