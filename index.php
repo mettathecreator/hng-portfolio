@@ -1,4 +1,3 @@
-<?php require_once './db/conn.php'; ?>
 <?php require_once './forms/contact.php'; ?>
 
 <!DOCTYPE html>

@@ -1,12 +1,12 @@
 <?php
-
+require_once '../db/conn.php';
 
 
 
 if(isset($_POST["name"]))
 {
 	sleep(5);
-	$connect = new PDO("mysql:host=localhost; dbname=hng-resume", "root", "");
+	// $connect = new PDO("mysql:host=localhost; dbname=hng-resume", "root", "");
 
 	$success = '';
 
@@ -79,7 +79,7 @@ if(isset($_POST["name"]))
 		VALUES (:name, :subject, :message, :email, :date)
 		";
     
-		$statement = $connect->prepare($query);
+		$statement = $connection->prepare($query);
 
 		$statement->execute($data);
 
