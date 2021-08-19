@@ -1,29 +1,19 @@
 <?php 
 
-$state = 'local';
+$state = 'production';
 
-if ($state === 'local') {
-	define("SERVER_HOST", "localhost");
-	define("SERVER_USERNAME", "root");
-	define("SERVER_PASSWORD", "");
-	define("DATABASE", "hng-resume");
-	define("REMOTE_PATH", "https://hng-portfolio.test/");
+if ($state === 'production') {
+    $connectionStringHerokuEnv = 'mysql://ba8a0ffe44363d:330cb2d3@us-cdbr-east-04.cleardb.com/heroku_e00f674c3f63fbb?reconnect=true';
+    $parsed = parse_url($connectionStringHerokuEnv);
+    $dbname = ltrim($parsed['path']. '/'); 
+    $connection = new PDO("{$parsed['scheme']}:host={$parsed};$dbname={$dbname};charset=utf8mb4", $parsed['user'], $parsed['pass'], [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
 	
 }else{
 
-	define("SERVER_HOST", "localhost");
-	define("SERVER_USERNAME", "alphamin_mettacreator");
-	define("SERVER_PASSWORD", "R5qPjiu9TdZUK52");
-	define("DATABASE", "alphamin_bitcoin");
-	define("REMOTE_PATH", "https://alphaminning.com/");
-
+    $connection = new PDO("mysql:host=localhost;dbname=hng-resume", "root", "");
+    $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 }
+		
 	
-	
-	$connection = mysqli_connect(SERVER_HOST, SERVER_USERNAME, SERVER_PASSWORD, DATABASE);
-	
-	if(!$connection){
-		die("Connection Error: " . mysqli_connect_error());
-	} 
 
 ?>
